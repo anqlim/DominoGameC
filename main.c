@@ -1,4 +1,4 @@
-#include "globals.h"
+﻿#include "globals.h"
 #include "graphics.h"
 
 void mouseButtonCallback(GLFWwindow* window, int button, int action, int mods) {

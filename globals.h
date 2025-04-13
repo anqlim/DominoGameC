@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "domino.h"
 
 extern DominoTile* set;

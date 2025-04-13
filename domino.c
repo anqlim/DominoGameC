@@ -1,4 +1,4 @@
-#include "globals.h"
+п»ї#include "globals.h"
 #include "domino.h"
 
 void freePlayer(Node* tail) {
@@ -145,7 +145,7 @@ int chooseMove(Player* bot, Field* field, int flag) {
     Node* current = bot->head;
     Node* moves[20];
     int countMoves = 0;
-    int values[7][3] = { {0, 0, 0} }; //0 - среди решений; 1 - на поле; 2 - в наборе
+    int values[7][3] = { {0, 0, 0} }; //0 - СЃСЂРµРґРё СЂРµС€РµРЅРёР№; 1 - РЅР° РїРѕР»Рµ; 2 - РІ РЅР°Р±РѕСЂРµ
     while (current != NULL) {
         values[current->tile.left][2]++;
         values[current->tile.right][2]++;
@@ -163,12 +163,12 @@ int chooseMove(Player* bot, Field* field, int flag) {
             if (match(&(bot->head->tile), field->head->tile.left) || match(&(bot->head->tile), field->head->tile.right)) {
                 return chooseMove(bot, field, 1);
             }
-            else return 0; //не сделал ход
+            else return 0; //РЅРµ СЃРґРµР»Р°Р» С…РѕРґ
         }
-        else return 0; //не сделал ход
+        else return 0; //РЅРµ СЃРґРµР»Р°Р» С…РѕРґ
     }
 
-    //1. дубли
+    //1. РґСѓР±Р»Рё
     DominoTile bestDouble = { -1, -1 };
     Node* best = NULL;
     for (int i = 0; i < countMoves; i++) {
@@ -179,10 +179,10 @@ int chooseMove(Player* bot, Field* field, int flag) {
     }
     if (bestDouble.left != -1) {
         transfer(bot, field, best);
-        return 1; //сделал ход
+        return 1; //СЃРґРµР»Р°Р» С…РѕРґ
     }
 
-    //2. минимизация "закрытых" чисел
+    //2. РјРёРЅРёРјРёР·Р°С†РёСЏ "Р·Р°РєСЂС‹С‚С‹С…" С‡РёСЃРµР»
     current = field->head;
     while (current != NULL) {
         values[current->tile.left][1]++;
@@ -209,10 +209,10 @@ int chooseMove(Player* bot, Field* field, int flag) {
     if (val != -1) {
         current = best;
         transfer(bot, field, best);
-        return 1; //сделал ход
+        return 1; //СЃРґРµР»Р°Р» С…РѕРґ
     }
 
-    //3. избавление от наиболее повторяющихся
+    //3. РёР·Р±Р°РІР»РµРЅРёРµ РѕС‚ РЅР°РёР±РѕР»РµРµ РїРѕРІС‚РѕСЂСЏСЋС‰РёС…СЃСЏ
     best = moves[0];
     int left = moves[0]->tile.left, right = moves[0]->tile.right;
     for (int i = 1; i < countMoves; i++) {
@@ -225,7 +225,7 @@ int chooseMove(Player* bot, Field* field, int flag) {
         }
     }
     transfer(bot, field, best);
-    return 1; //сделал ход
+    return 1; //СЃРґРµР»Р°Р» С…РѕРґ
 }
 int noSolutions(Player* player, Field* field) {
     Node* current = player->head;

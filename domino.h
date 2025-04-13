@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -23,28 +23,28 @@ typedef Player Field;
 void freePlayer(Node* tail);
 void freeGame(DominoTile* set, Player* player, Player* bot, Field* field);
 
-void fileData(); //извлечение данных из файла
+void fileData(); //РёР·РІР»РµС‡РµРЅРёРµ РґР°РЅРЅС‹С… РёР· С„Р°Р№Р»Р°
 
-void delay(int sec); //задержка
+void delay(int sec); //Р·Р°РґРµСЂР¶РєР°
 
 void addTile(Player* player, const DominoTile* tile);
 void deleteTile(Player* player, Node* tile);
 
-//функции для формирования набора костяшек и раздачи их игрокам
+//С„СѓРЅРєС†РёРё РґР»СЏ С„РѕСЂРјРёСЂРѕРІР°РЅРёСЏ РЅР°Р±РѕСЂР° РєРѕСЃС‚СЏС€РµРє Рё СЂР°Р·РґР°С‡Рё РёС… РёРіСЂРѕРєР°Рј
 void createFullSet(DominoTile* tiles, int* count);
 void shuffleTiles(DominoTile* tiles, int count);
 void dealTiles(Player* player, DominoTile* tiles, int* count, int numTiles);
 void InitialSet(Player* player, Player* bot, Field* field, DominoTile* tiles, int* tileCount);
 
-//вспомогательные функции для логики бота
+//РІСЃРїРѕРјРѕРіР°С‚РµР»СЊРЅС‹Рµ С„СѓРЅРєС†РёРё РґР»СЏ Р»РѕРіРёРєРё Р±РѕС‚Р°
 void swap(DominoTile* tile);
 int match(DominoTile* tile, int val);
 void transfer(Player* bot, Field* field, Node* current);
 
-int chooseMove(Player* bot, Field* field, int flag); //алгоритм бота
+int chooseMove(Player* bot, Field* field, int flag); //Р°Р»РіРѕСЂРёС‚Рј Р±РѕС‚Р°
 
-//вспомогательные функции для проверок при ходах
+//РІСЃРїРѕРјРѕРіР°С‚РµР»СЊРЅС‹Рµ С„СѓРЅРєС†РёРё РґР»СЏ РїСЂРѕРІРµСЂРѕРє РїСЂРё С…РѕРґР°С…
 int noSolutions(Player* player, Field* field);
 int comparePoints(Player* player, Player* bot);
 
-void endOfGame(Player* loser, gameResult result, state* currentState); //конец игры
+void endOfGame(Player* loser, gameResult result, state* currentState); //РєРѕРЅРµС† РёРіСЂС‹

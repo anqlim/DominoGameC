@@ -1,4 +1,4 @@
-#include "globals.h"
+﻿#include "globals.h"
 
 DominoTile* set = NULL;
 int tileCount = 0;

@@ -1,4 +1,4 @@
-#include "globals.h"
+﻿#include "globals.h"
 #include "graphics.h"
 
 void drawDot(float x, float y, float size) {

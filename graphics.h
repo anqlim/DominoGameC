@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <glfw3.h>
 #include <string.h>
 #include <math.h>
@@ -15,26 +15,26 @@
 
 void drawDot(float x, float y, float size);
 
-//отрисовка текста
+//РѕС‚СЂРёСЃРѕРІРєР° С‚РµРєСЃС‚Р°
 void drawDigit(int digit, float x, float y, float size);
 void drawText(char* str, float x, float y, float size);
 
-//отрисовка кнопок
+//РѕС‚СЂРёСЃРѕРІРєР° РєРЅРѕРїРѕРє
 void drawButton();
 void drawMissButton();
 void drawExitButton();
 
-//отрисовка костяшки
+//РѕС‚СЂРёСЃРѕРІРєР° РєРѕСЃС‚СЏС€РєРё
 void drawHalfTile(float x, float y, float width, float height, int value);
 void drawTile(float x, float y, float width, float height, int left, int right);
 void drawSelected(float x, float y);
 
-//отрисовка игровых зон (рука игрока, бота, игровое поле)
+//РѕС‚СЂРёСЃРѕРІРєР° РёРіСЂРѕРІС‹С… Р·РѕРЅ (СЂСѓРєР° РёРіСЂРѕРєР°, Р±РѕС‚Р°, РёРіСЂРѕРІРѕРµ РїРѕР»Рµ)
 void drawPlayerHand(const Player* player);
 void drawBotHand(const Player* bot);
 void drawField(const Field* field);
 
-//отрисовка окон
+//РѕС‚СЂРёСЃРѕРІРєР° РѕРєРѕРЅ
 void drawMenu();
 void drawHelp();
 void drawGame();
